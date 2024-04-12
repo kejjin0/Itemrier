@@ -1,4 +1,4 @@
-package dao.mybatis;
+package dao.mybatis.review;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;

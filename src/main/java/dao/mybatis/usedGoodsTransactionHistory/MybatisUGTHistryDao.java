@@ -1,4 +1,4 @@
-package dao.mybatis;
+package dao.mybatis.usedGoodsTransactionHistory;
 
 import java.util.List;
 

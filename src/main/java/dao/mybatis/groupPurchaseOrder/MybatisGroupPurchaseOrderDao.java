@@ -1,4 +1,4 @@
-package dao.mybatis;
+package dao.mybatis.groupPurchaseOrder;
 
 import java.util.List;
 

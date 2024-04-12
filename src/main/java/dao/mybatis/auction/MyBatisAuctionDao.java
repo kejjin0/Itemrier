@@ -1,4 +1,4 @@
-package dao.mybatis;
+package dao.mybatis.auction;
 
 import java.util.List;
 

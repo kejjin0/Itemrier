@@ -1,4 +1,4 @@
-package dao.mybatis;
+package dao.mybatis.usedGoodes;
 
 import java.util.List;
 

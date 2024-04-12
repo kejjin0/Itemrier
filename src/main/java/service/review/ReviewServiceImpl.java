@@ -3,7 +3,7 @@ package service.review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dao.ReviewDao;
+import dao.review.ReviewDao;
 import domain.Review;
 
 @Service("ReviewServiceImpl")

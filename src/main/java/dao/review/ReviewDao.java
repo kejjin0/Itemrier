@@ -1,4 +1,4 @@
-package dao;
+package dao.review;
 
 import domain.Review;
 import org.springframework.dao.DataAccessException;

@@ -1,4 +1,4 @@
-package dao;
+package dao.usedGoods;
 
 import java.util.List;
 

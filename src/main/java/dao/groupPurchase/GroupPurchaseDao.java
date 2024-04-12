@@ -1,4 +1,4 @@
-package dao;
+package dao.groupPurchase;
 
 import java.util.List;
 

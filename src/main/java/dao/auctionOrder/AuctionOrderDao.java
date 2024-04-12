@@ -1,4 +1,4 @@
-package dao;
+package dao.auctionOrder;
 
 import java.util.List;
 

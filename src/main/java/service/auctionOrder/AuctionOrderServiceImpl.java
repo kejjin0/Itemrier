@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dao.AuctionOrderDao;
+import dao.auctionOrder.AuctionOrderDao;
 import domain.Auction;
 import domain.AuctionOrder;
 

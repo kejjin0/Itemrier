@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.Auction;
-import domain.AuctionOrder;
+import domain.auction.Auction;
+import domain.auctionOrder.AuctionOrder;
 import service.auctionOrder.AuctionOrderService;
 
 @Controller

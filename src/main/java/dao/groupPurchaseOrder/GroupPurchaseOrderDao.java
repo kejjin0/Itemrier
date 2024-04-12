@@ -2,9 +2,10 @@ package dao.groupPurchaseOrder;
 
 import java.util.List;
 
-import domain.GroupPurchaseOrder;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
+
+import domain.groupPurchaseOrder.GroupPurchaseOrder;
 
 @Repository
 public interface GroupPurchaseOrderDao {

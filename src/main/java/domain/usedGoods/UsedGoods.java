@@ -1,69 +1,50 @@
-package domain;
+package domain.usedGoods;
 
-public class GroupPurchase {
+public class UsedGoods {
 	private int itemId;
 	private String itemName;
-	private int price;
 	private String status;
 	private int sellerId;
 	private int buyerId;
 	
-	public GroupPurchase(int itemId, String itemName, int price, String status, int sellerId, int buyerId) {
+	public UsedGoods(int itemId, String itemName, String status, int seller, int buyer) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
-		this.price = price;
 		this.status = status;
-		this.sellerId = sellerId;
-		this.buyerId = buyerId;
+		this.sellerId = seller;
+		this.buyerId = buyer;
 	}
-
+	
 	public int getItemId() {
 		return itemId;
 	}
-
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-
 	public String getItemName() {
 		return itemName;
 	}
-
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
 	public String getStatus() {
 		return status;
 	}
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-	public int getSellerId() {
+	public int getSeller() {
 		return sellerId;
 	}
-
-	public void setSellerId(int sellerId) {
-		this.sellerId = sellerId;
+	public void setSeller(int seller) {
+		this.sellerId = seller;
 	}
-
-	public int getBuyerId() {
+	public int getBuyer() {
 		return buyerId;
 	}
-
-	public void setBuyerId(int buyerId) {
-		this.buyerId = buyerId;
+	public void setBuyer(int buyer) {
+		this.buyerId = buyer;
 	}
-	
+
 }

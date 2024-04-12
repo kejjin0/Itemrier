@@ -1,4 +1,4 @@
-package domain;
+package domain.review;
 
 public class Review {
 	private int reivewId;	// 리뷰 아이디

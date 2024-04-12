@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.review.ReviewDao;
-import domain.Review;
+import domain.review.Review;
 
 @Service("ReviewServiceImpl")
 public class ReviewServiceImpl implements ReviewService{

@@ -5,7 +5,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.ReviewMapper;
-import domain.Review;
+import domain.review.Review;
 
 @Repository
 public class MyBatisReviewDao implements ReviewMapper{

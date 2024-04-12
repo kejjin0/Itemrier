@@ -7,7 +7,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.UsedGoodsMapper;
-import domain.UsedGoods;
+import domain.usedGoods.UsedGoods;
 
 @Repository
 public class MyBatisUsedGoodsDao implements UsedGoodsMapper {

@@ -1,4 +1,4 @@
-package domain;
+package domain.auctionOrder;
 
 import java.util.Date;
 

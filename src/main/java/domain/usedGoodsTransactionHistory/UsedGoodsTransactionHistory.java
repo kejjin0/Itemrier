@@ -1,4 +1,4 @@
-package domain;
+package domain.usedGoodsTransactionHistory;
 
 import java.util.Date;
 

@@ -7,7 +7,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.UGTHistryMapper;
-import domain.UsedGoodsTransactionHistory;
+import domain.usedGoodsTransactionHistory.UsedGoodsTransactionHistory;
 
 @Repository
 public class MybatisUGTHistryDao implements UGTHistryMapper {

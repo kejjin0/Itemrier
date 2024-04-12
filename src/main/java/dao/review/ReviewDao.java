@@ -1,7 +1,8 @@
 package dao.review;
 
-import domain.Review;
 import org.springframework.dao.DataAccessException;
+
+import domain.review.Review;
 
 public interface ReviewDao {
 	// 리뷰 작성

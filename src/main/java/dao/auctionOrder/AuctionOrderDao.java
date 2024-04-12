@@ -2,8 +2,9 @@ package dao.auctionOrder;
 
 import java.util.List;
 
-import domain.Auction;
-import domain.AuctionOrder;
+import domain.auction.Auction;
+import domain.auctionOrder.AuctionOrder;
+
 import org.springframework.dao.DataAccessException;
 
 public interface AuctionOrderDao {

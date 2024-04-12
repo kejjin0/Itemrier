@@ -7,8 +7,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.AuctionOrderMapper;
-import domain.Auction;
-import domain.AuctionOrder;
+import domain.auction.Auction;
+import domain.auctionOrder.AuctionOrder;
 
 @Repository
 public class MybatisAuctionOrderDao implements AuctionOrderMapper{

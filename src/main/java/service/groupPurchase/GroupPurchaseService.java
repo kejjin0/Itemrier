@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import domain.GroupPurchase;
+import domain.groupPurchase.GroupPurchase;
 
 public interface GroupPurchaseService {
 	 //마이페이지 위함

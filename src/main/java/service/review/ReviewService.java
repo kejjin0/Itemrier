@@ -1,6 +1,6 @@
 package service.review;
 
-import domain.Review;
+import domain.review.Review;
 
 public interface ReviewService {
 	// 리뷰 작성

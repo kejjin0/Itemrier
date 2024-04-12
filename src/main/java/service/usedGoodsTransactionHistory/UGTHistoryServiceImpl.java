@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.usedGoodsTransactionHistory.UsedGoodsTransactionHistoryDao;
-import domain.UsedGoodsTransactionHistory;
+import domain.usedGoodsTransactionHistory.UsedGoodsTransactionHistory;
 
 @Service("UGTHistoryServiceImp")
 public class UGTHistoryServiceImpl implements UGTHistoryService{

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.usedGoods.UsedGoodsDao;
-import domain.UsedGoods;
+import domain.usedGoods.UsedGoods;
 
 @Service("UsedGoodsServiceImpl")
 public class UsedGoodsServiceImpl implements UsedGoodsService {

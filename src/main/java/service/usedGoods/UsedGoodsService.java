@@ -2,7 +2,7 @@ package service.usedGoods;
 
 import java.util.List;
 
-import domain.UsedGoods;
+import domain.usedGoods.UsedGoods;
 
 public interface UsedGoodsService {
     /// 마이페이지에 필요

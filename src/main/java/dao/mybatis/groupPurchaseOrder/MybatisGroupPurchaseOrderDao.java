@@ -7,8 +7,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.GroupPurchaseOrderMapper;
-import domain.GroupPurchase;
-import domain.GroupPurchaseOrder;
+import domain.groupPurchase.GroupPurchase;
+import domain.groupPurchaseOrder.GroupPurchaseOrder;
 
 @Repository
 public class MybatisGroupPurchaseOrderDao implements GroupPurchaseOrderMapper{

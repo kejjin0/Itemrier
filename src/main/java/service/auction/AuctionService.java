@@ -2,7 +2,7 @@ package service.auction;
 
 import java.util.List;
 
-import domain.Auction;
+import domain.auction.Auction;
 
 public interface AuctionService {
     ///마이 페이지 위함

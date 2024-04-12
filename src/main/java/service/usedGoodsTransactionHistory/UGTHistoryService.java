@@ -2,7 +2,7 @@ package service.usedGoodsTransactionHistory;
 
 import java.util.List;
 
-import domain.UsedGoodsTransactionHistory;
+import domain.usedGoodsTransactionHistory.UsedGoodsTransactionHistory;
 
 public interface UGTHistoryService {
 	// (거래 확정) 거래 내역 생성

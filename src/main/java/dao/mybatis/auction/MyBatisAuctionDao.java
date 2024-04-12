@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 
 import dao.mybatis.mapper.AuctionMapper;
-import domain.Auction;
+import domain.auction.Auction;
 
 public class MyBatisAuctionDao implements AuctionMapper {
 	@Autowired

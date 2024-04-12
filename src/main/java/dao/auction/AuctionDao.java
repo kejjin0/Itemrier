@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import domain.Auction;
+import domain.auction.Auction;
 
 public interface AuctionDao {
     // 경매 상품 등록

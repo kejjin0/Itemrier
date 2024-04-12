@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.groupPurchaseOrder.GroupPurchaseOrderDao;
-import domain.GroupPurchaseOrder;
+import domain.groupPurchaseOrder.GroupPurchaseOrder;
 
 @Service("GroupPurchaseOrderServiceImpl")
 public class GroupPurchaseOrderServiceImpl implements GroupPurchaseOrderService{

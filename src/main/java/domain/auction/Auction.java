@@ -1,4 +1,4 @@
-package domain;
+package domain.auction;
 
 public class Auction {
 	private int itemId;

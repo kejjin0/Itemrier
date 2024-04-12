@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import domain.UsedGoods;
+import domain.usedGoods.UsedGoods;
 
 public interface UsedGoodsDao {
     // 중고거래 상품 등록

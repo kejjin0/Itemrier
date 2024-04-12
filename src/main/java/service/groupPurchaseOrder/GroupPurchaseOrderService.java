@@ -2,7 +2,7 @@ package service.groupPurchaseOrder;
 
 import java.util.List;
 
-import domain.GroupPurchaseOrder;
+import domain.groupPurchaseOrder.GroupPurchaseOrder;
 
 public interface GroupPurchaseOrderService {
 	// 주문 생성

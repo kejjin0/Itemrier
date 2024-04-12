@@ -2,8 +2,8 @@ package service.auctionOrder;
 
 import java.util.List;
 
-import domain.Auction;
-import domain.AuctionOrder;
+import domain.auction.Auction;
+import domain.auctionOrder.AuctionOrder;
 
 public interface AuctionOrderService {
 	// 주문 생성

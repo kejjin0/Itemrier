@@ -2,8 +2,9 @@ package dao.usedGoodsTransactionHistory;
 
 import java.util.List;
 
-import domain.UsedGoodsTransactionHistory;
 import org.springframework.dao.DataAccessException;
+
+import domain.usedGoodsTransactionHistory.UsedGoodsTransactionHistory;
 
 public interface UsedGoodsTransactionHistoryDao {
 	

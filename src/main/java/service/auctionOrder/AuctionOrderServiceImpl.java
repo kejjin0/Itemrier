@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.auctionOrder.AuctionOrderDao;
-import domain.Auction;
-import domain.AuctionOrder;
+import domain.auction.Auction;
+import domain.auctionOrder.AuctionOrder;
 
 @Service("AuctionOrderServiceImpl")
 public class AuctionOrderServiceImpl implements AuctionOrderService{

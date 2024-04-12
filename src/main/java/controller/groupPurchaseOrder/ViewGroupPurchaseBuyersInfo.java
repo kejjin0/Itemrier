@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import domain.GroupPurchaseOrder;
-import service.GroupPurchaseOrderService;
+import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller
 public class ViewGroupPurchaseBuyersInfo {

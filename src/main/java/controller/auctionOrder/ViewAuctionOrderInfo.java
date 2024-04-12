@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import domain.Auction;
 import domain.AuctionOrder;
-import service.AuctionOrderService;
+import service.auctionOrder.AuctionOrderService;
 
 @Controller
 public class ViewAuctionOrderInfo {

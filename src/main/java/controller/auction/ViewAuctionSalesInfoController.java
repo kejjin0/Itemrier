@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import domain.Auction;
-import service.AuctionService;
+import service.auction.AuctionService;
 
 @Controller
 public class ViewAuctionSalesInfoController {

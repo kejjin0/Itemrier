@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import domain.UsedGoodsTransactionHistory;
-import service.UGTHistoryService;
+import service.usedGoodsTransactionHistory.UGTHistoryService;
 
 @Controller
 public class ViewUGTHistoryController {

@@ -2,7 +2,7 @@ package dao.mybatis.mapper;
 
 import java.util.List;
 
-import domain.UsedGoods;
+import domain.usedGoods.UsedGoods;
 
 public interface UsedGoodsMapper {
     // 중고거래 상품 등록

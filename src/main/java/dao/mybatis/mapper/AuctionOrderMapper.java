@@ -2,8 +2,8 @@ package dao.mybatis.mapper;
 
 import java.util.List;
 
-import domain.Auction;
-import domain.AuctionOrder;
+import domain.auction.Auction;
+import domain.auctionOrder.AuctionOrder;
 
 public interface AuctionOrderMapper {
 	// 주문 생성

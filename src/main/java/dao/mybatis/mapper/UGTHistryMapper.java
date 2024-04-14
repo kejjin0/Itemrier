@@ -2,7 +2,7 @@ package dao.mybatis.mapper;
 
 import java.util.List;
 
-import domain.UsedGoodsTransactionHistory;
+import domain.usedGoodsTransactionHistory.UsedGoodsTransactionHistory;
 
 public interface UGTHistryMapper {
 	// (거래 확정) 거래 내역 생성

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.UsedGoods;
-import service.UsedGoodsService;
+import domain.usedGoods.UsedGoods;
+import service.usedGoods.UsedGoodsService;
 
 @Controller
 public class ViewUsedGoodsSalesInfoController {

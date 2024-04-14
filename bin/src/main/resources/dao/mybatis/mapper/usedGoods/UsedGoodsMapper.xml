@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.UsedGoodsMapper">
+	<cache />
+	
+	<insert id="insertUsedGoodItem" parameterType="UsedGoods">
+		INSERT INTO USEDGOODS (itemId, itemName, description, condition, contactType, status, userId, catId, registerDate, price)
+		VALUES (item_seq.nextval, #{itemName}, #{desc}, #{condition}, #{contactType}, 'ongoing', #{userId}, #{catId}, SYSDATE, #{price})
+	</insert>
+	
+	<update id="updateUsedGoodItem" parameterType="UsedGoods">
+		UPDATE USEDGOODS
+		SET itemName = #{itemName}, description = #{desc}, condition = #{condition}, contactType = #{contactType}, catId = #{catId}, price = #{price}
+		WHERE itemId = #{itemId}
+	</update>
+	
+	<delete id="deleteUsedGoodItem" parameterType="int">
+		DELETE FROM USEDGOODS
+		WHERE itemId = #{itemId}
+	</delete>
+	
+	<select id="getUsedGoodById" parameterType="int" resultType="UsedGoods">
+		SELECT * FROM USEDGOODS
+		WHERE itemId = #{itemId}
+	</select>
+	
+	<update id="updateUsedGoodStatus" parameterType="hashMap">
+		UPDATE USEDGOODS
+		SET status = #{status]
+		WHERE itemId = #{itemId}
+	</update>
+	
+	
+	<!--  마이페이지를 위함 -->
+	<select id="getUsedGoodsInProgress" resultType="UsedGoods" parameterType="java.lang.int">
+		Select itemId, itemName, price, status, createDate 
+		From UsedGoods 
+		Where userId = #{sellerId} and NOT u.status IN (‘종료’);
+	</select>
+	
+	<select id="getUsedGoodsEnded" resultType="UsedGoods" parameterType="java.lang.int">
+		Select itemId, itemName, price, status, createDate 
+		From UsedGoods 
+		Where userId = #{sellerId} and u.status IN (‘종료’);
+		
+		<!-- 
+		Select itemId, itemName, price, createDate 
+		From UsedGoods 
+		Where userId = #{userId} and status = “종료”
+		 -->
+	</select>
+	
+</mapper>

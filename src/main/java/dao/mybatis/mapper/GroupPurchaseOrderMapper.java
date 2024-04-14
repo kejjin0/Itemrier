@@ -2,8 +2,8 @@ package dao.mybatis.mapper;
 
 import java.util.List;
 
-import domain.GroupPurchase;
-import domain.GroupPurchaseOrder;
+import domain.groupPurchase.GroupPurchase;
+import domain.groupPurchaseOrder.GroupPurchaseOrder;
 
 public interface GroupPurchaseOrderMapper {
 	// 주문 생성

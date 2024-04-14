@@ -2,7 +2,7 @@ package dao.mybatis.mapper;
 
 import java.util.List;
 
-import domain.GroupPurchase;
+import domain.groupPurchase.GroupPurchase;
 
 public interface GroupPurchaseMapper {
     // 공동구매 상품 등록

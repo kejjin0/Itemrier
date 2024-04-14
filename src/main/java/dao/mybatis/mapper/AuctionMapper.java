@@ -2,7 +2,7 @@ package dao.mybatis.mapper;
 
 import java.util.List;
 
-import domain.Auction;
+import domain.auction.Auction;
 
 public interface AuctionMapper {
     // 경매 상품 등록

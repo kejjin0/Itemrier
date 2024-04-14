@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.Review;
-import service.ReviewService;
+import domain.review.Review;
+import service.review.ReviewService;
 
 @Controller
 public class ViewReviewController {

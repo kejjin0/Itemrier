@@ -1,11 +1,11 @@
 package dao.mybatis.mapper;
 
-import domain.Review;
+import domain.review.Review;
 
 public interface ReviewMapper {
-	// ¸®ºä ÀÛ¼º
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
 	void insertReview(Review review);
 	
-	// Æò±Õ ¸®ºä °¡Á®¿À±â
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Review getUserReview(int reviewId);
 }

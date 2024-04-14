@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.GroupPurchaseOrder;
-import service.GroupPurchaseOrderService;
+import domain.groupPurchaseOrder.GroupPurchaseOrder;
+import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller
 public class ViewGroupPurchaseBuyersInfo {

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.groupPurchaseOrder.GroupPurchaseOrder;
+import domain.order.Order;
 import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller
@@ -20,7 +20,7 @@ public class AddGroupPurchaseOrderController {
 	
 	@RequestMapping("/groupPurchase/order.do")
 	public String addGroupPurchaseOrder(
-			@RequestParam("order") GroupPurchaseOrder order) throws Exception{
+			@RequestParam("order") Order order) throws Exception{
 		
 		this.gpOrderS.insertGroupPurchaseOrder(order);
 		return "groupPruchase/conformOrderInfo";
@@ -30,7 +30,7 @@ public class AddGroupPurchaseOrderController {
 	public ModelAndView conformGroupPurchaseOrderInfo(
 			@RequestParam("orderId") int orderId) throws Exception{
 		
-		GroupPurchaseOrder order = this.gpOrderS.getCompletePaymentInfo(orderId);
+		Order order = this.gpOrderS.getCompletePaymentInfo(orderId);
 		ModelAndView mav = new ModelAndView("viewGroupPurchaseOrderInfo");
 		mav.addObject("order", order);
 		return mav;

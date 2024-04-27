@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.groupPurchaseOrder.GroupPurchaseOrder;
+import domain.order.Order;
 import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller
@@ -24,7 +24,7 @@ private GroupPurchaseOrderService gpOrderS;
 
 		this.gpOrderS.updateStatus(orderId);
 		
-		GroupPurchaseOrder order = this.gpOrderS.getCancelInfo(orderId);
+		Order order = this.gpOrderS.getCancelInfo(orderId);
 		ModelAndView mav = new ModelAndView("grupPurchaseOrderCancelInfo");
 		mav.addObject("order", order);
 		return mav;

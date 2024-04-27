@@ -2,12 +2,8 @@ package dao.mybatis.mapper;
 
 import java.util.List;
 
-import domain.Order.Order;
 import domain.groupPurchase.GroupPurchase;
-<<<<<<< HEAD
-=======
 import domain.order.Order;
->>>>>>> modify1
 
 public interface GroupPurchaseOrderMapper {
 	// 주문 생성
@@ -23,16 +19,10 @@ public interface GroupPurchaseOrderMapper {
 	List<Order> getGroupPurchaseOrderBuyersInfo(int itemId);
 
 	// 구매자, 전화번호 변경
-<<<<<<< HEAD
-		void updateBuyerInfo(Order order);
-=======
-		void updateBuyerInfo( Order order);
->>>>>>> modify1
-//	void updateBuyerInfo(GroupPurchaseOrder order);
+	void updateBuyerInfo( Order order);
 
 	// 배송지 변경
-		void updateDeliveryInfo(Order order);
-//	void updateDeliveryInfo(GroupPurchaseOrder order);
+	void updateDeliveryInfo(Order order);
 
 	// 송장 번호 입력 및 수정
 	void updateInvoiceNumberInfo(Order order);
@@ -45,6 +35,4 @@ public interface GroupPurchaseOrderMapper {
 
 	// 결제 확인 창
 	Order getCompletePaymentInfo(int orderId);
-
-	// 사용자 전화번호, 주소 정보 가져오기 (user domain에)
 }

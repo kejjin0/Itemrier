@@ -7,12 +7,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.AuctionOrderMapper;
-import domain.Order.Order;
 import domain.auction.Auction;
-<<<<<<< HEAD
-=======
 import domain.order.Order;
->>>>>>> modify1
 
 @Repository
 public class MybatisAuctionOrderDao implements AuctionOrderMapper{
@@ -42,10 +38,6 @@ public class MybatisAuctionOrderDao implements AuctionOrderMapper{
 	
 	// 구매자, 전화번호 변경
 	public void updateBuyerInfo(Order order) throws DataAccessException {
-<<<<<<< HEAD
-//		auctionOrderMapper.updateBuyerInfo(orderId,buyerName,phoneNum);
-=======
->>>>>>> modify1
 		auctionOrderMapper.updateBuyerInfo(order);
 	}
 	
@@ -56,11 +48,7 @@ public class MybatisAuctionOrderDao implements AuctionOrderMapper{
 	
 	// 송장 번호 입력 및 수정
 	public Order updateInvoiceNumberInfo(Order order) throws DataAccessException {
-<<<<<<< HEAD
-		return auctionOrderMapper.updateInvoiceNumberInfo(order);
-=======
 		return auctionOrderMapper.updateInvoiceNumberInfo( order);
->>>>>>> modify1
 	}
 	
 	// 현황 변경 (주문 취소 등)
@@ -74,12 +62,8 @@ public class MybatisAuctionOrderDao implements AuctionOrderMapper{
 	}
 	
 	// 결제 확인 창
-<<<<<<< HEAD
 	public 	// 결제 확인 창
 	Order getCompletePaymentInfo (int orderId) throws DataAccessException {
-=======
-	public Order getCompletePaymentInfo (int orderId) throws DataAccessException {
->>>>>>> modify1
 		return auctionOrderMapper.getCompletePaymentInfo(orderId);
 	}
 }

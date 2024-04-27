@@ -6,11 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.groupPurchaseOrder.GroupPurchaseOrderDao;
-<<<<<<< HEAD
-import domain.Order.Order;
-=======
 import domain.order.Order;
->>>>>>> modify1
 
 @Service("GroupPurchaseOrderServiceImpl")
 public class GroupPurchaseOrderServiceImpl implements GroupPurchaseOrderService{
@@ -50,11 +46,7 @@ public class GroupPurchaseOrderServiceImpl implements GroupPurchaseOrderService{
 
 	// 송장 번호 입력 및 수정
 	public void updateInvoiceNumberInfo(Order order) {
-<<<<<<< HEAD
 		gpoDao.updateInvoiceNumberInfo(order);
-=======
-		gpoDao.updateInvoiceNumberInfo( order);
->>>>>>> modify1
 	}
 
 	// 현황 변경 (주문 취소 등)

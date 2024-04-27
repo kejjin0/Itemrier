@@ -24,14 +24,9 @@ public class ViewGroupPurchaseSalesInfoController {
 	}
 	
 	@RequestMapping("/myPage/groupPruchase/inProgress")
-<<<<<<< HEAD
-	public ModelAndView viewGroupPurchaseInProgress(
-			@RequestParam("sellerId") int sellerId) throws Exception{
-=======
 	public String viewGroupPurchaseInProgress(
 			@RequestParam("sellerId") int sellerId,
 			ModelMap model) throws Exception{
->>>>>>> modify1
 		
 		List<GroupPurchase> items = this.groupPurchaseS.getGroupPurchaseInProgress(sellerId);
 		model.put("items", items);
@@ -39,15 +34,6 @@ public class ViewGroupPurchaseSalesInfoController {
 	}
 	
 	@RequestMapping("/myPage/groupPurchase/ended")
-<<<<<<< HEAD
-	public ModelAndView viewGroupPurchaseEnded(
-			@RequestParam("sellerId") int sellerId) throws Exception{
-		
-		List<GroupPurchase> items = this.groupPurchaseS.getGroupPurchaseEnded(sellerId);
-		ModelAndView mav = new ModelAndView("GroupPurchaseEnded");
-		mav.addObject("items", items);
-		return mav;
-=======
 	public String viewGroupPurchaseEnded(
 			@RequestParam("sellerId") int sellerId,
 			ModelMap model) throws Exception{
@@ -55,7 +41,6 @@ public class ViewGroupPurchaseSalesInfoController {
 		items.setPageSize(15);
 		model.put("items", items);
 		return "GroupPurchaseEnded";
->>>>>>> modify1
 	}
 	
 	@RequestMapping("/myPage/groupPurchase/ended2")

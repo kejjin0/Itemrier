@@ -24,14 +24,9 @@ public class ViewAuctionSalesInfoController {
 	}
 	
 	@RequestMapping("/myPage/auction/inProgress")
-<<<<<<< HEAD
-	public ModelAndView viewAuctionInProgress(
-			@RequestParam("sellerId") int sellerId) throws Exception {
-=======
 	public String viewAuctionInProgress(
 			@RequestParam("sellerId") int sellerId,
 			ModelMap model) throws Exception {
->>>>>>> modify1
 		
 		List<Auction> items = this.auctionS.getAuctionInProgress(sellerId);
 		model.put("items", items);
@@ -39,15 +34,6 @@ public class ViewAuctionSalesInfoController {
 	}
 	
 	@RequestMapping("/myPage/auction/ended")
-<<<<<<< HEAD
-	public ModelAndView viewAucitonEnded(
-			@RequestParam("sellerId") int sellerId) throws Exception{
-		
-		List<Auction> items = this.auctionS.getAuctionEnded(sellerId);
-		ModelAndView mav = new ModelAndView("AuctionEnded");
-		mav.addObject("items", items);
-		return mav;
-=======
 	public String viewAucitonEnded(
 			@RequestParam("sellerId") int sellerId,
 			ModelMap model) throws Exception{
@@ -68,7 +54,6 @@ public class ViewAuctionSalesInfoController {
 		if("next".equals(page)) { items.nextPage(); }
 		else if ("previous".equals(page)) { items.previousPage(); }
 		return "AuctionEnded";
->>>>>>> modify1
 	}
 	
 }

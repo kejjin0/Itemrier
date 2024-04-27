@@ -7,12 +7,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.GroupPurchaseOrderMapper;
-import domain.Order.Order;
 import domain.groupPurchase.GroupPurchase;
-<<<<<<< HEAD
-=======
 import domain.order.Order;
->>>>>>> modify1
 
 @Repository
 public class MybatisGroupPurchaseOrderDao implements GroupPurchaseOrderMapper{
@@ -70,8 +66,4 @@ public class MybatisGroupPurchaseOrderDao implements GroupPurchaseOrderMapper{
 	public Order getCompletePaymentInfo (int orderId) {
 		return gpoMapper.getCompletePaymentInfo(orderId);	
 	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> modify1
 }

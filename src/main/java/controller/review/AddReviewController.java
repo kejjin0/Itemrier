@@ -22,11 +22,7 @@ public class AddReviewController {
 //			@RequestParam("")
 	
 	@RequestMapping("/mypage/addReview")
-<<<<<<< HEAD
-	public String handleRequest(
-=======
 	public String submitReview(
->>>>>>> modify1
 			@RequestParam("review") Review review) throws Exception{
 		
 		this.reviewS.insertReview(review);

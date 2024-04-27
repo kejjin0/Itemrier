@@ -24,14 +24,9 @@ public class ViewUsedGoodsSalesInfoController {
 	}
 	
 	@RequestMapping("/myPage/usedGoodsTransaction/inProgress")
-<<<<<<< HEAD
-	public ModelAndView viewUsedGoodsInProgress(
-			@RequestParam("sellerId") int sellerId) throws Exception{
-=======
 	public String viewUsedGoodsInProgress(
 			@RequestParam("sellerId") int sellerId,
 			ModelMap model) throws Exception{
->>>>>>> modify1
 		
 		List<UsedGoods> items = this.usedGoodsS.getUsedGoodsInProgress(sellerId);
 		model.put("items", items);
@@ -39,15 +34,6 @@ public class ViewUsedGoodsSalesInfoController {
 	}
 	
 	@RequestMapping("/myPage/usedGoodsTransaction/ended")
-<<<<<<< HEAD
-	public ModelAndView viewUsedGoodsEnded(
-			@RequestParam("sellerId") int sellerId) throws Exception{
-		
-		List<UsedGoods> items = this.usedGoodsS.getUsedGoodsEnded(sellerId);
-		ModelAndView mav = new ModelAndView("viewUsedGoodsEnded");
-		mav.addObject("items", items);
-		return mav;
-=======
 	public String viewUsedGoodsEnded(
 			@RequestParam("sellerId") int sellerId,
 			ModelMap model) throws Exception{
@@ -55,7 +41,6 @@ public class ViewUsedGoodsSalesInfoController {
 		items.setPageSize(15);
 		model.put("items", items);
 		return "viewUsedGoodsEnded";
->>>>>>> modify1
 	}
 
 	@RequestMapping("/myPage/usedGoodsTransaction/ended2")

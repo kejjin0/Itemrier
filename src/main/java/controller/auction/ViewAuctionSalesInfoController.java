@@ -20,7 +20,7 @@ public class ViewAuctionSalesInfoController {
 		this.auctionS = auctionS;
 	}
 	
-	@RequestMapping("/myPage/auction/inProgress.do")
+	@RequestMapping("/myPage/auction/inProgress")
 	public ModelAndView viewAuctionInProgress(
 			@RequestParam("sellerId") int sellerId) throws Exception {
 		
@@ -30,7 +30,7 @@ public class ViewAuctionSalesInfoController {
 		return mav;
 	}
 	
-	@RequestMapping("/myPage/auction/ended.do")
+	@RequestMapping("/myPage/auction/ended")
 	public ModelAndView viewAucitonEnded(
 			@RequestParam("sellerId") int sellerId) throws Exception{
 		

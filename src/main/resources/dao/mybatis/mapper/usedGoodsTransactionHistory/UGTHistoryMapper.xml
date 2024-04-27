@@ -5,11 +5,12 @@
 
 	<insert id="insertUsedGoodsTransactionHistory" parameterType="insertUsedGoodsTransactionHistory">
 		Insert into UsedGoodsTransactionHistory
-		(itemId, buyerId, sellerReviewYorNm buyerReviewYorN, transactionDate)
+		(itemId, buyerId, transactionDate)
 		Values 
-		(#{h.itemId}, #{h.buyerId}, 'N', 'N', #{h.transactionDate});
+		(#{h.itemId}, #{h.buyerId}, #{h.transactionDate});
 	</insert>
 
+<!-- 
 	<update id="updateBuyerReviewYorN" parameterType="java.lang.int">
 		Update UsedGoodsTransactionHistory set buyerRevuewYorN = 'Y' 
 		Where itemId = #{itemId};
@@ -19,9 +20,10 @@
 		Update UsedGoodsTransactionHistory set sellerRevuewYorN = 'Y' 
 		Where itemId = #{itemId};
 	</update>
+ -->
 	
 	<select id="getUsedGoodsBuyerHistory" resultType="UsedGoodsTransactionHistory" parameterType="java.lang.int">
-		Select u.itemId, u.itemName, u.price, u.userId, h.buyerId, h.sellerReviewYorN, h.buyerReviewYorN, h.transactionDate 
+		Select u.itemId, u.itemName, u.price, u.userId, h.buyerId, h.transactionDate 
 		From UsedGoods u, UsedGoodsTransactionHistory h 
 		Where h.itemId = u.itemId and h.buyerId = #{buyerId};
 	</select>

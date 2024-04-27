@@ -20,7 +20,7 @@ public class ViewUsedGoodsSalesInfoController {
 		this.usedGoodsS = usedGoodsS;
 	}
 	
-	@RequestMapping("/myPage/usedGoodsTransaction/inProgress.do")
+	@RequestMapping("/myPage/usedGoodsTransaction/inProgress")
 	public ModelAndView viewUsedGoodsInProgress(
 			@RequestParam("sellerId") int sellerId) throws Exception{
 		
@@ -30,7 +30,7 @@ public class ViewUsedGoodsSalesInfoController {
 		return mav;
 	}
 	
-	@RequestMapping("/myPage/usedGoodsTransaction/ended.do")
+	@RequestMapping("/myPage/usedGoodsTransaction/ended")
 	public ModelAndView viewUsedGoodsEnded(
 			@RequestParam("sellerId") int sellerId) throws Exception{
 		

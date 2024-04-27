@@ -30,6 +30,6 @@ public class UGTHistoryServiceImpl implements UGTHistoryService{
 	
 	// (구매) 사용자의 거래 내역 가져오기
 	public List<UsedGoodsTransactionHistory> getUsedGoodsBuyerHistory(int buyerId){
-		return historyDao.getUsedGoodsBuyerHistory(buyerId, buyerId);
+		return historyDao.getUsedGoodsBuyerHistory(buyerId);
 	}
 }

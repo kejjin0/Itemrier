@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import domain.Order.Order;
 import domain.auction.Auction;
-import domain.auctionOrder.AuctionOrder;
 import service.auctionOrder.AuctionOrderService;
 
 @Controller
-public class ViewAuctionOrderInfo {
+public class ViewAuctionOrderInfoController {
 private AuctionOrderService auctionOrderS;
 	
 	@Autowired
@@ -26,7 +26,7 @@ private AuctionOrderService auctionOrderS;
 			@RequestParam("buyerId") int buyerId) throws Exception {
 	
 		List<Auction> items = this.auctionOrderS.getBuyAuction(buyerId);
-		ModelAndView mav = new ModelAndView("AuctionOrders");
+		ModelAndView mav = new ModelAndView("auctionOrders");
 		mav.addObject("items", items);
 		return mav;
 	}
@@ -35,7 +35,7 @@ private AuctionOrderService auctionOrderS;
 	public ModelAndView viewAuctionOrderDetail(
 			@RequestParam("orderId") int orderId) throws Exception{
 		
-		AuctionOrder order = this.auctionOrderS.getAuctionOrderDetailInfo(orderId);
+		Order order = this.auctionOrderS.getAuctionOrderDetailInfo(orderId);
 		ModelAndView mav = new ModelAndView("auctionOrderDetail");
 		mav.addObject("order", order);
 		return mav;

@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.auctionOrder.AuctionOrder;
+import domain.Order.Order;
 import service.auctionOrder.AuctionOrderService;
 
 @Controller
-public class ViewAuctionBuyersInfo {
+public class ViewAuctionBuyersInfoController {
 private AuctionOrderService auctionOrderS;
 	
 	@Autowired
@@ -24,7 +24,7 @@ private AuctionOrderService auctionOrderS;
 	public ModelAndView viewAuctionBuyersInfo(
 			@RequestParam("itemId") int itemId) throws Exception{
 		
-		List<AuctionOrder> buyers = this.auctionOrderS.getAuctionOrderBuyersInfo(itemId);
+		List<Order> buyers = this.auctionOrderS.getAuctionOrderBuyersInfo(itemId);
 		ModelAndView mav = new ModelAndView("auctionBuyersInfo");
 		mav.addObject("buyers", buyers);
 		return mav;
@@ -32,11 +32,9 @@ private AuctionOrderService auctionOrderS;
 	
 	@RequestMapping("myPage/auction/updateInvoiceNumber")
 	public String udpateAuctionInvoiceNumber(
-			@RequestParam("itemId") int itemId,
-			@RequestParam("orderId") int orderId, 
-			@RequestParam("invoiceNumber") int invoiceNumber) throws Exception{
+			@RequestParam("order") Order order) throws Exception{
 		
-		this.auctionOrderS.updateInvoiceNumberInfo(orderId, invoiceNumber);
+		this.auctionOrderS.updateInvoiceNumberInfo(order);
 		return "myPage/auction/buyersInfo";
 	}
 	

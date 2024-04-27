@@ -18,7 +18,7 @@ public class ViewReviewController {
 		this.reviewS = reviewS;
 	}
 	
-	@RequestMapping("/viewReview.do")
+	@RequestMapping("/viewReview")
 	public ModelAndView handleRequest(
 			@RequestParam("userId") int userId) throws Exception{
 		

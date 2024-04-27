@@ -2,45 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="dao.mybatis.mapper.AuctionOrderMapper">
-	<insert id="insertAuctionOrder" parameterType="AuctionOrder">
-		insert into Auction (orderId, itemId, buyerId, buyerName, phoneNum, zipCode, addStreet, addDetail, totalPrice, quantity, pg, pay_method, orderDate, deliveryLocation, deliveryRequest, invoiceNumber, email, orderStatus) 
+	<insert id="insertAuctionOrder" parameterType="Order">
+		insert into Auction (orderId, itemId, buyerId, buyerName, phoneNum, zipCode, addStreet, addDetail, price, quantity, pg, pay_method, orderDate, deliveryLocation, deliveryRequest, invoiceNumber, email, status) 
 		Values 
-		(orderId_seq, #{order.itemId}, #{order.buyerId}, #{order.buyerName}, #{order,phoneNum}, #{order.zipCode}, #{order.addStreet} #{order.addDetail}, #{order.totalPrice}, #{order.quantity}, #{order.pg}, #{order.pay_method}, #{order.orderDate}, #{order.deliveryLocation}, #{order.deliveryRequest}, “n”, #{order.email}, #{order.orderStatus});
+		(orderId_seq, #{itemId}, #{buyerId}, #{buyerName}, #{phoneNum}, #{zipCode}, #{addStreet} #{addDetail}, #{price}, #{quantity}, #{pg}, #{pay_method}, #{orderDate}, #{deliveryLocation}, #{deliveryRequest}, 0, #{email}, #{status});
 	</insert>
 
-	<select id="getBuyAuction" resultType="AuctionOrder" parameterType="java.lang.int">
-		Select o.orderId, a.itemId, a.itemName, a.price AS totalPrice, o.orderDate 
+	<select id="getBuyAuction" resultType="Order" parameterType="java.lang.int">
+		Select o.orderId, a.itemId, a.itemName, a.price, o.orderDate 
 		From Auction a, AuctionOrder o 
 		Where o.buyerId = #{buyerId} and a.itemId = o.itemId;
 	</select>
 	
-	<select id="getAuctionOrderDetailInfo" resultType="AuctionOrder" parameterType="java.lang.int">
-		Select orderId, itemId, buyerId, buyerName, phoneNum, zipCode, addStreet, addDetail, totalPrice, 
+	<select id="getAuctionOrderDetailInfo" resultType="Order" parameterType="java.lang.int">
+		Select orderId, itemId, buyerId, buyerName, phoneNum, zipCode, addStreet, addDetail, price, 
 			quantity, pg, pay_method, orderDate, deliveryLocation, deliveryRequest, invoiceNumber,
 			orderStatus, email 
 		From AuctionOrder 
 		Where orderId = #{orderId};
 	</select>
 	
-	<select id="getAuctionOrderBuyersInfo" resultType="AuctionOrder" parameterType="java.lang.int">
+	<select id="getAuctionOrderBuyersInfo" resultType="Order" parameterType="java.lang.int">
 		Select orderId, buyerId, buyerName, zipCode, addStreet, addDetail, phoneNum 
 		From AuctionOrder 
 		Where itemId = #{itemId};
 	</select>
 	
-	<update id="updateBuyerInfo" parameterType="AuctionOrder">
+	<update id="updateBuyerInfo" parameterType="Order">
 		Update AuctionOrder 
 		set buyerName = #{buyerName}, phoneNum = #{phoneNum} 
 		Where orderId = #{orderId};
 	</update>
 	
-	<update id="updateDeliveryInfo" parameterType="AuctionOrder">
+	<update id="updateDeliveryInfo" parameterType="Order">
 		Update AuctionOrder 
 		set zipCode = #{zipCode}, addStreet = #{addStreet}, addDetail = #{addDetail}  
 		Where orderId = #{orderId};
 	</update>
 	
-	<update id="updateInvoiceNumberInfo" parameterType="AuctionOrder">
+	<update id="updateInvoiceNumberInfo" parameterType="Order">
 		Update AuctionOrder 
 		set invoiceNumber = #{invoiceNumber} 
 		Where orderId = #{orderId};
@@ -52,14 +52,14 @@
 		Where  orderId=#{orderId};
 	</update>
 	
-	<select id="getCancelInfo" parameterType="AuctionOrder">
-		Select orderId, itemId, itemNmae, buyerId, totalPrice, orderDate, email, pay_method  
+	<select id="getCancelInfo" resultType="Order" parameterType="Order">
+		Select orderId, itemId, itemNmae, buyerId, price, orderDate, email, pay_method  
 		From AuctionOrder 
 		Where orderId = #{orderId};
 	</select>
 	
-	<select id="getCompletePaymentInfo" parameterType="AuctionOrder">
-		Select orderId, itemId, itemName, buyerId, totalPrice, orderDate, zipCode, addSreet, 
+	<select id="getCompletePaymentInfo" parameterType="Order">
+		Select orderId, itemId, itemName, buyerId, price, orderDate, zipCode, addSreet, 
 		addDetail, pay_method 
 		From AuctionOrder 
 		Where orderId = #{orderId};

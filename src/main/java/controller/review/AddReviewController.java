@@ -18,7 +18,7 @@ public class AddReviewController {
 	}
 	
 	
-	@RequestMapping("/mypage/addReview.do")
+	@RequestMapping("/mypage/addReview")
 	public String handleRequest(
 			@RequestParam("review") Review review) throws Exception{
 		

@@ -1,8 +1,8 @@
-package domain.auctionOrder;
+package domain.Order;
 
 import java.util.Date;
 
-public class AuctionOrder {
+public class Order {
 	private int orderId;	// 주문 아이디
 	private int itemId;		// 주문한 상품 아이디
 	private String itemName;	// 주문한 상품 이름
@@ -13,7 +13,7 @@ public class AuctionOrder {
 	private int zipCode;	// 우편번호
 	private String addStreet;	// 주소
 	private String addDetail;	// 상세주소
-	private int totalPrice;		// 주문 금액
+	private int price;		// 주문 금액
 	private int quantity;	// 주문 수량
 	private String pg;	// 결제 시 pg사 코드값
 	private String pay_method;	// 결제 수단
@@ -21,13 +21,13 @@ public class AuctionOrder {
 	private String deliveryLocation;	//배송 위치
 	private String deliveryRequest;		// 배송 요청 사항
 	private int invoiceNumber;	// 송장번호
-	private String orderStatus;	// 결제 상태 (주문 or 취소)
+	private String status;	// 결제 상태 (주문 or 취소)
 	private String email;	// 구매자 email
 	
-	public AuctionOrder() {
+	public Order() {
 	}
 
-	public AuctionOrder(int orderId, int itemId, String itemName, int sellerId, int buyerId, String buyerName,
+	public Order(int orderId, int itemId, String itemName, int sellerId, int buyerId, String buyerName,
 			String phoneNum, int zipCode, String addStreet, String addDetail, int totalPrice, int quantity, String pg,
 			String pay_method, Date orderDate, String deliveryLocation, String deliveryRequest, int invoiceNumber,
 			String orderStatus, String email) {
@@ -42,7 +42,7 @@ public class AuctionOrder {
 		this.zipCode = zipCode;
 		this.addStreet = addStreet;
 		this.addDetail = addDetail;
-		this.totalPrice = totalPrice;
+		this.price = totalPrice;
 		this.quantity = quantity;
 		this.pg = pg;
 		this.pay_method = pay_method;
@@ -50,7 +50,7 @@ public class AuctionOrder {
 		this.deliveryLocation = deliveryLocation;
 		this.deliveryRequest = deliveryRequest;
 		this.invoiceNumber = invoiceNumber;
-		this.orderStatus = orderStatus;
+		this.status = orderStatus;
 		this.email = email;
 	}
 
@@ -135,11 +135,11 @@ public class AuctionOrder {
 	}
 
 	public int getTotalPrice() {
-		return totalPrice;
+		return price;
 	}
 
 	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
+		this.price = totalPrice;
 	}
 
 	public int getQuantity() {
@@ -199,11 +199,11 @@ public class AuctionOrder {
 	}
 
 	public String getOrderStatus() {
-		return orderStatus;
+		return status;
 	}
 
 	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
+		this.status = orderStatus;
 	}
 
 	public String getEmail() {

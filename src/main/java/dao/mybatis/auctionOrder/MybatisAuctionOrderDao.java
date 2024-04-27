@@ -7,8 +7,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import dao.mybatis.mapper.AuctionOrderMapper;
+import domain.Order.Order;
 import domain.auction.Auction;
-import domain.auctionOrder.AuctionOrder;
 
 @Repository
 public class MybatisAuctionOrderDao implements AuctionOrderMapper{
@@ -16,7 +16,7 @@ public class MybatisAuctionOrderDao implements AuctionOrderMapper{
 	private AuctionOrderMapper auctionOrderMapper;
 	
 	// 주문 생성
-	public void insertAuctionOrder(AuctionOrder order) throws DataAccessException {
+	public void insertAuctionOrder(Order order) throws DataAccessException {
 		auctionOrderMapper.insertAuctionOrder(order);
 	}
 	
@@ -26,29 +26,30 @@ public class MybatisAuctionOrderDao implements AuctionOrderMapper{
 	}
 	
 	// (구매자) 특정 상품 구매 내역 확인
-	public AuctionOrder getAuctionOrderDetailInfo(int orderId)  throws DataAccessException{
+	public Order getAuctionOrderDetailInfo(int orderId)  throws DataAccessException{
 		return auctionOrderMapper.getAuctionOrderDetailInfo(orderId);
 	}
 
 
 	// (판매자) 싱픔 구매자 정보 확인
-	public List<AuctionOrder> getAuctionOrderBuyersInfo(int itemId) throws DataAccessException {
+	public List<Order> getAuctionOrderBuyersInfo(int itemId) throws DataAccessException {
 		return auctionOrderMapper.getAuctionOrderBuyersInfo(itemId);
 	}
 	
 	// 구매자, 전화번호 변경
-	public void updateBuyerInfo(int orderId, String buyerName, String phoneNum) throws DataAccessException {
-		auctionOrderMapper.updateBuyerInfo(orderId,buyerName,phoneNum);
+	public void updateBuyerInfo(Order order) throws DataAccessException {
+//		auctionOrderMapper.updateBuyerInfo(orderId,buyerName,phoneNum);
+		auctionOrderMapper.updateBuyerInfo(order);
 	}
 	
 	// 배송지 변경
-	public void updateDeliveryInfo(int orderId, int zipCode, String addStreet, String addDetail) throws DataAccessException {
-		auctionOrderMapper.updateDeliveryInfo(orderId, zipCode, addStreet, addDetail);
+	public void updateDeliveryInfo(Order order) throws DataAccessException {
+		auctionOrderMapper.updateDeliveryInfo(order);
 	}
 	
 	// 송장 번호 입력 및 수정
-	public AuctionOrder updateInvoiceNumberInfo(int orderId, int invoiceNumber) throws DataAccessException {
-		return auctionOrderMapper.updateInvoiceNumberInfo( orderId, invoiceNumber);
+	public Order updateInvoiceNumberInfo(Order order) throws DataAccessException {
+		return auctionOrderMapper.updateInvoiceNumberInfo(order);
 	}
 	
 	// 현황 변경 (주문 취소 등)
@@ -57,13 +58,13 @@ public class MybatisAuctionOrderDao implements AuctionOrderMapper{
 	}
 	
 	// 취소 확인 정보 전달
-	public AuctionOrder getCancelInfo(int orderId) throws DataAccessException {
+	public Order getCancelInfo(int orderId) throws DataAccessException {
 		return auctionOrderMapper.getCancelInfo(orderId);
 	}
 	
 	// 결제 확인 창
 	public 	// 결제 확인 창
-	AuctionOrder getCompletePaymentInfo (int orderId) throws DataAccessException {
+	Order getCompletePaymentInfo (int orderId) throws DataAccessException {
 		return auctionOrderMapper.getCompletePaymentInfo(orderId);
 	}
 	

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import domain.Order.Order;
 import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller
@@ -16,25 +17,20 @@ private GroupPurchaseOrderService groupPurchaseOrderS;
 		this.groupPurchaseOrderS = groupPurchaseOrderS;
 	}
 	
-	@RequestMapping("myPage/groupPurchase/order/modify.do")
+	@RequestMapping("myPage/groupPurchase/order/BuyerInfoModifyForm")
 	public String ModifyBuyerInfo(
-			@RequestParam("orderId")int orderId, 
-			@RequestParam("buyerName") String buyerName, 
-			@RequestParam("phoneNum") String phoneNum 
+			@RequestParam("order")Order order
 			) throws Exception{
 		
-		this.groupPurchaseOrderS.updateBuyerInfo(orderId, buyerName, phoneNum);
+		this.groupPurchaseOrderS.updateBuyerInfo(order);
 		return "myPage/groupPurchase/order/modify";
 	}
 	
-	@RequestMapping("myPage/groupPurchase/order/modify.do")
+	@RequestMapping("myPage/groupPurchase/order/deliveryInfoModifyForm")
 	public String ModifyOrderDeliveryInfo(
-			@RequestParam("orderId") int orderId, 
-			@RequestParam("zipCode") int zipCode, 
-			@RequestParam("addStreet") String addStreet, 
-			@RequestParam("addDetail") String addDetail) throws Exception{
+			@RequestParam("order") Order order) throws Exception{
 		
-		this.groupPurchaseOrderS.updateDeliveryInfo(orderId, zipCode, addStreet, addDetail);
+		this.groupPurchaseOrderS.updateDeliveryInfo(order);
 		return "myPage/groupPurchase/order/modify";
 	}
 }

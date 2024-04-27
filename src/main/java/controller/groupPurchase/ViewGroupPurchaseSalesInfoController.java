@@ -20,7 +20,7 @@ public class ViewGroupPurchaseSalesInfoController {
 		this.groupPurchaseS = groupPurchaseS;
 	}
 	
-	@RequestMapping("/myPage/groupPruchase/inProgress.do")
+	@RequestMapping("/myPage/groupPruchase/inProgress")
 	public ModelAndView viewGroupPurchaseInProgress(
 			@RequestParam("sellerId") int sellerId) throws Exception{
 		
@@ -30,7 +30,7 @@ public class ViewGroupPurchaseSalesInfoController {
 		return mav;
 	}
 	
-	@RequestMapping("/myPage/groupPurchase/ended.do")
+	@RequestMapping("/myPage/groupPurchase/ended")
 	public ModelAndView viewGroupPurchaseEnded(
 			@RequestParam("sellerId") int sellerId) throws Exception{
 		

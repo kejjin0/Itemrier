@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.groupPurchaseOrder.GroupPurchaseOrder;
+import domain.Order.Order;
 import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller
@@ -18,13 +18,13 @@ private GroupPurchaseOrderService gpOrderS;
 		this.gpOrderS = gpOrderS;
 	}
 	
-	@RequestMapping("groupPurchase/orderCancel.do")
+	@RequestMapping("groupPurchase/orderCancel")
 	public ModelAndView removeAuctionOrder(
 			@RequestParam("orderId") int orderId) throws Exception {
 
 		this.gpOrderS.updateStatus(orderId);
 		
-		GroupPurchaseOrder order = this.gpOrderS.getCancelInfo(orderId);
+		Order order = this.gpOrderS.getCancelInfo(orderId);
 		ModelAndView mav = new ModelAndView("grupPurchaseOrderCancelInfo");
 		mav.addObject("order", order);
 		return mav;

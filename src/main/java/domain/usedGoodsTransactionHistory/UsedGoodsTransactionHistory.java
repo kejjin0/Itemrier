@@ -8,8 +8,6 @@ public class UsedGoodsTransactionHistory {
 	private String price;	// 상품 금액
 	private int sellerId;	// 판매자 아이디
 	private int buyerId;	// 구매자 아이디
-	private String sellerReviewYorN;	// 판매자 리뷰 여부
-	private String buyerReveiewYorN;	// 구매자 리뷰 여부
 	private Date transactionDate;	// 거래 날짜
 	
 	
@@ -18,15 +16,13 @@ public class UsedGoodsTransactionHistory {
 
 
 	public UsedGoodsTransactionHistory(int itemId, String itemName, String price, int sellerId, int buyerId,
-			String sellerReviewYorN, String buyerReveiewYorN, Date transactionDate) {
+			Date transactionDate) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
 		this.price = price;
 		this.sellerId = sellerId;
 		this.buyerId = buyerId;
-		this.sellerReviewYorN = sellerReviewYorN;
-		this.buyerReveiewYorN = buyerReveiewYorN;
 		this.transactionDate = transactionDate;
 	}
 
@@ -79,27 +75,6 @@ public class UsedGoodsTransactionHistory {
 	public void setBuyerId(int buyerId) {
 		this.buyerId = buyerId;
 	}
-
-
-	public String getSellerReviewYorN() {
-		return sellerReviewYorN;
-	}
-
-
-	public void setSellerReviewYorN(String sellerReviewYorN) {
-		this.sellerReviewYorN = sellerReviewYorN;
-	}
-
-
-	public String getBuyerReveiewYorN() {
-		return buyerReveiewYorN;
-	}
-
-
-	public void setBuyerReveiewYorN(String buyerReveiewYorN) {
-		this.buyerReveiewYorN = buyerReveiewYorN;
-	}
-
 
 	public Date getTransactionDate() {
 		return transactionDate;

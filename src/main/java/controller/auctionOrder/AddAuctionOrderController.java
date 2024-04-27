@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.auctionOrder.AuctionOrder;
+import domain.Order.Order;
 import service.auctionOrder.AuctionOrderService;
 
 @Controller
@@ -18,19 +18,19 @@ public class AddAuctionOrderController {
 		this.auctionOrderS = auctionOrderS;
 	}
 	
-	@RequestMapping("/auction/order.do")
+	@RequestMapping("/auction/order")
 	public String initNewAuctionOrder(
-			@RequestParam("order") AuctionOrder order) throws Exception{
+			@RequestParam("order") Order order) throws Exception{
 		
 		this.auctionOrderS.insertAuctionOrder(order);
 		return "auction/conformOrderInfo";
 	}
 	
-	@RequestMapping("/auction/conformOrderInfo.do")
+	@RequestMapping("/auction/conformOrderInfo")
 	public ModelAndView conformAuctionOrderInfo(
 			@RequestParam("orderId") int orderId) throws Exception{
 		
-		AuctionOrder order = this.auctionOrderS.getCompletePaymentInfo(orderId);
+		Order order = this.auctionOrderS.getCompletePaymentInfo(orderId);
 		ModelAndView mav = new ModelAndView("viewAuctionOrderInfo");
 		mav.addObject("order", order);
 		return mav;

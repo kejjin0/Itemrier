@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import domain.groupPurchaseOrder.GroupPurchaseOrder;
+import domain.Order.Order;
 import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller
-public class ViewGroupPurchaseBuyersInfo {
+public class ViewGroupPurchaseBuyersInfoController {
 private GroupPurchaseOrderService gpOrderS;
 	
 	@Autowired
@@ -20,11 +20,11 @@ private GroupPurchaseOrderService gpOrderS;
 		this.gpOrderS = gpOrderS;
 	}
 	
-	@RequestMapping("myPage/groupPurchase/buyersInfo.do")
+	@RequestMapping("myPage/groupPurchase/buyersInfo")
 	public ModelAndView viewGroupPurchaseBuyersInfo(
 			@RequestParam("itemId") int itemId) throws Exception{
 		
-		List<GroupPurchaseOrder> buyers = this.gpOrderS.getGroupPurchaseOrderBuyersInfo(itemId);
+		List<Order> buyers = this.gpOrderS.getGroupPurchaseOrderBuyersInfo(itemId);
 		ModelAndView mav = new ModelAndView("groupPurchaseBuyersInfo");
 		mav.addObject("buyers", buyers);
 		return mav;
@@ -32,11 +32,9 @@ private GroupPurchaseOrderService gpOrderS;
 	
 	@RequestMapping("myPage/groupPurchase/updateInvoiceNumber")
 	public String updateGroupPurchaseInvoiceNumber(
-			@RequestParam("itemId") int itemId,
-			@RequestParam("orderId") int orderId, 
-			@RequestParam("invoiceNumber") int invoiceNumber) throws Exception{
+			@RequestParam("order") Order order) throws Exception{
 		
-		this.gpOrderS.updateInvoiceNumberInfo(orderId, invoiceNumber);
+		this.gpOrderS.updateInvoiceNumberInfo(order);
 		
 		return "myPage/groupPurchase/buyersInfo";
 	}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.mybatis.mapper.ReviewMapper">
+
+	<insert id="insertReview" parameterType="Review">
+		Insert into Review (reviewId, userId, itemId, reviewerId, itemType, satistactionRate, speedOfAnwser, promise) 
+		Values 
+		(review_seq, #{userId}, #{itemId}, #{reviewerId}, #{itemType}, #{satistattionRate}, #{speedOfAnswer}, #{promise});
+	</insert>
+	
+	<select id="getUserReview" resultType="Review" parameterType="java.lang.int">
+		Select reviewId, userId, itemId, reviewerId, itemType, AVG(satisfactionRate) as satisfactionRate, AVG(speedOfAnswer) as speedOfAnswer, AVG(promise) as promise 
+		From Review Where reviewId = #{reviewId} Group By userId;
+	</select>
+
+</mapper>

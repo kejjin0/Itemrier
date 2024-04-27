@@ -4,6 +4,10 @@ import java.util.List;
 
 import domain.Order.Order;
 import domain.groupPurchase.GroupPurchase;
+<<<<<<< HEAD
+=======
+import domain.order.Order;
+>>>>>>> modify1
 
 public interface GroupPurchaseOrderMapper {
 	// 주문 생성
@@ -19,7 +23,11 @@ public interface GroupPurchaseOrderMapper {
 	List<Order> getGroupPurchaseOrderBuyersInfo(int itemId);
 
 	// 구매자, 전화번호 변경
+<<<<<<< HEAD
 		void updateBuyerInfo(Order order);
+=======
+		void updateBuyerInfo( Order order);
+>>>>>>> modify1
 //	void updateBuyerInfo(GroupPurchaseOrder order);
 
 	// 배송지 변경

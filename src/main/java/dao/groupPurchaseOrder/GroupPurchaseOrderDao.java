@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+<<<<<<< HEAD
 import domain.Order.Order;
+=======
+import domain.order.Order;
+>>>>>>> modify1
 
 @Repository
 public interface GroupPurchaseOrderDao {
@@ -24,6 +28,7 @@ public interface GroupPurchaseOrderDao {
 	
 	
 	// 구매자, 전화번호 변경
+<<<<<<< HEAD
 //	void updateBuyerInfo(int orderId, String buyerName, String phoneNum )  throws DataAccessException;
 	void updateBuyerInfo(Order order) throws DataAccessException;
 	
@@ -33,6 +38,14 @@ public interface GroupPurchaseOrderDao {
 	
 	// 송장 번호 입력 및 수정
 //	void updateInvoiceNumberInfo(int orderId, int invoiceNumber) throws DataAccessException;
+=======
+	void updateBuyerInfo(Order order) throws DataAccessException;
+	
+	// 배송지 변경
+	void updateDeliveryInfo(Order order) throws DataAccessException;
+	
+	// 송장 번호 입력 및 수정
+>>>>>>> modify1
 	void updateInvoiceNumberInfo(Order order) throws DataAccessException;
 	
 	// 현황 변경 (주문 취소 등)
@@ -44,5 +57,4 @@ public interface GroupPurchaseOrderDao {
 	// 결제 확인 창
 	Order getCompletePaymentInfo (int orderId) throws DataAccessException;
 	
-	// 사용자 전화번호, 주소 정보 가져오기 (user domain에)
 }

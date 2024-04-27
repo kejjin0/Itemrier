@@ -5,7 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+<<<<<<< HEAD
 import domain.Order.Order;
+=======
+import domain.order.Order;
+>>>>>>> modify1
 import service.groupPurchaseOrder.GroupPurchaseOrderService;
 
 @Controller

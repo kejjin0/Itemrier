@@ -4,6 +4,10 @@ import java.util.List;
 
 import domain.Order.Order;
 import domain.auction.Auction;
+<<<<<<< HEAD
+=======
+import domain.order.Order;
+>>>>>>> modify1
 
 public interface AuctionOrderMapper {
 	// 주문 생성
@@ -19,11 +23,17 @@ public interface AuctionOrderMapper {
 	List<Order> getAuctionOrderBuyersInfo(int itemId);
 	
 	// 구매자, 전화번호 변경
+<<<<<<< HEAD
 //	void updateBuyerInfo(int orderId, String buyerName, String phoneNum);
 	void updateBuyerInfo(Order order);
 	
 	// 배송지 변경
 //	void updateDeliveryInfo(int orderId, int zipCode, String addStreet, String addDetail);
+=======
+	void updateBuyerInfo(Order order);
+	
+	// 배송지 변경
+>>>>>>> modify1
 	void updateDeliveryInfo(Order order);
 	
 	// 송장 번호 입력 및 수정
@@ -37,4 +47,9 @@ public interface AuctionOrderMapper {
 	
 	// 결제 확인 창
 	Order getCompletePaymentInfo (int orderId);
+<<<<<<< HEAD
+=======
+	
+	// 사용자 전화번호, 주소 정보 가져오기 (user domain에)
+>>>>>>> modify1
 }

@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+<<<<<<< HEAD
 import domain.Order.Order;
+=======
+import domain.order.Order;
+>>>>>>> modify1
 import service.auctionOrder.AuctionOrderService;
 
 @Controller
@@ -32,7 +36,11 @@ private AuctionOrderService auctionOrderS;
 	
 	@RequestMapping("myPage/auction/updateInvoiceNumber")
 	public String udpateAuctionInvoiceNumber(
+<<<<<<< HEAD
 			@RequestParam("order") Order order) throws Exception{
+=======
+			@RequestParam("order")Order order) throws Exception{
+>>>>>>> modify1
 		
 		this.auctionOrderS.updateInvoiceNumberInfo(order);
 		return "myPage/auction/buyersInfo";

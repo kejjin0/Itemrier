@@ -30,7 +30,7 @@ public class ViewGroupPurchaseSalesInfoController {
 		
 		List<GroupPurchase> items = this.groupPurchaseS.getGroupPurchaseInProgress(sellerId);
 		model.put("items", items);
-		return "GroupPurchaseInProgress";
+		return "groupPurchaseInProgress";
 	}
 	
 	@RequestMapping("/myPage/groupPurchase/ended")
@@ -40,7 +40,7 @@ public class ViewGroupPurchaseSalesInfoController {
 		PagedListHolder<GroupPurchase> items = new PagedListHolder<GroupPurchase>(this.groupPurchaseS.getGroupPurchaseEnded(sellerId));
 		items.setPageSize(15);
 		model.put("items", items);
-		return "GroupPurchaseEnded";
+		return "groupPurchaseEnded";
 	}
 	
 	@RequestMapping("/myPage/groupPurchase/ended2")
@@ -53,6 +53,6 @@ public class ViewGroupPurchaseSalesInfoController {
 		}
 		if("next".equals(page)) { items.nextPage(); }
 		else if ("previous".equals(page)) { items.previousPage(); }
-		return "GroupPurchaseEnded";
+		return "groupPurchaseEnded";
 	}	
 }

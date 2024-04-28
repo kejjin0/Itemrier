@@ -19,9 +19,9 @@ public class ReviewController {
 	}
 	
 	public String UsedGoodsReview(
-			) throws Excpetion{
+			) throws Exception{
 		
-		
+		return "reviewForm";
 	}
 	
 	

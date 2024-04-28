@@ -27,7 +27,7 @@ public class RemoveAuctionOrderController {
 		
 		Order order = this.auctionOrderS.getCancelInfo(orderId);
 		model.addAttribute("order", order);
-		return "auctionOrderCancelInfo";
+		return "orderCancelInfo";
 	}
 
 }

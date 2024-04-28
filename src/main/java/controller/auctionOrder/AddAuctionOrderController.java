@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import domain.order.Order;
 import service.auctionOrder.AuctionOrderService;
@@ -39,13 +38,13 @@ public class AddAuctionOrderController {
 	}
 	
 	@RequestMapping("/auction/conformOrderInfo")
-	public ModelAndView conformAuctionOrderInfo(
-			@RequestParam("orderId") int orderId) throws Exception{
+	public String conformAuctionOrderInfo(
+			@RequestParam("orderId") int orderId,
+			Model model) throws Exception{
 		
 		Order order = this.auctionOrderS.getCompletePaymentInfo(orderId);
-		ModelAndView mav = new ModelAndView("viewAuctionOrderInfo");
-		mav.addObject("order", order);
-		return mav;
+		model.addAttribute("order", order);
+		return "orderCompletionInfo";
 	}
 	
 }

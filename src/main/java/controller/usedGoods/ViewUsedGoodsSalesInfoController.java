@@ -30,7 +30,7 @@ public class ViewUsedGoodsSalesInfoController {
 		
 		List<UsedGoods> items = this.usedGoodsS.getUsedGoodsInProgress(sellerId);
 		model.put("items", items);
-		return "viewUsedGoodsInProgress";
+		return "usedGoodsInProgress";
 	}
 	
 	@RequestMapping("/myPage/usedGoodsTransaction/ended")
@@ -40,7 +40,7 @@ public class ViewUsedGoodsSalesInfoController {
 		PagedListHolder<UsedGoods> items = new PagedListHolder<UsedGoods>(this.usedGoodsS.getUsedGoodsEnded(sellerId));
 		items.setPageSize(15);
 		model.put("items", items);
-		return "viewUsedGoodsEnded";
+		return "usedGoodsEnded";
 	}
 
 	@RequestMapping("/myPage/usedGoodsTransaction/ended2")
@@ -53,6 +53,6 @@ public class ViewUsedGoodsSalesInfoController {
 		}
 		if("next".equals(page)) { items.nextPage(); }
 		else if ("previous".equals(page)) { items.previousPage(); }
-		return "viewUsedGoodsEnded";
+		return "usedGoodsEnded";
 	}
 }

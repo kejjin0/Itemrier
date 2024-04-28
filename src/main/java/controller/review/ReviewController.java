@@ -10,7 +10,7 @@ import domain.review.Review;
 import service.review.ReviewService;
 
 @Controller
-public class AddReviewController {
+public class ReviewController {
 	private ReviewService reviewS;
 	
 	@Autowired
@@ -18,8 +18,12 @@ public class AddReviewController {
 		this.reviewS = reviewS;
 	}
 	
-//	public readyForSubmit(
-//			@RequestParam("")
+	public String UsedGoodsReview(
+			) throws Excpetion{
+		
+		
+	}
+	
 	
 	@RequestMapping("/mypage/addReview")
 	public String submitReview(

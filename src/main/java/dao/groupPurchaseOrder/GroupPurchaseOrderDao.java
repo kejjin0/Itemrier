@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import domain.groupPurchase.GroupPurchase;
 import domain.order.Order;
 
 @Repository
@@ -13,7 +14,7 @@ public interface GroupPurchaseOrderDao {
 	void insertGroupPurchaseOrder(Order order) throws DataAccessException;
 	
 	// (구매) 구매 내역 학인 
-	List<Order> getBuyGroupPurchase(int buyerId) throws DataAccessException;
+	List<GroupPurchase> getBuyGroupPurchase(int buyerId) throws DataAccessException;
 	
 	// (구매자) 특정 상품 구매 내역 확인
 	Order getGroupPurchaseOrderDetailInfo(int orderId) throws DataAccessException;

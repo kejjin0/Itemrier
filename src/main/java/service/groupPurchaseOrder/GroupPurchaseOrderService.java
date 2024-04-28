@@ -2,6 +2,7 @@ package service.groupPurchaseOrder;
 
 import java.util.List;
 
+import domain.groupPurchase.GroupPurchase;
 import domain.order.Order;
 
 public interface GroupPurchaseOrderService {
@@ -9,7 +10,7 @@ public interface GroupPurchaseOrderService {
 	void insertGroupPurchaseOrder(Order order);
 
 	// (구매) 구매 내역 학인
-	List<Order> getBuyGroupPurchase(int buyerId);
+	List<GroupPurchase> getBuyGroupPurchase(int buyerId);
 
 	// (구매자) 특정 상품 구매 내역 확인
 	Order getGroupPurchaseOrderDetailInfo(int orderId);

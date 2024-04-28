@@ -2,6 +2,7 @@ package controller.groupPurchaseOrder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,20 +18,23 @@ private GroupPurchaseOrderService groupPurchaseOrderS;
 		this.groupPurchaseOrderS = groupPurchaseOrderS;
 	}
 	
-	@RequestMapping("myPage/groupPurchase/order/BuyerInfoModifyForm")
+	@RequestMapping("myPage/groupPurchase/order/buyerInfoModifyForm")
 	public String ModifyBuyerInfo(
-			@RequestParam("order")Order order
-			) throws Exception{
+			@RequestParam("order")Order order,
+			Model model) throws Exception{
 		
 		this.groupPurchaseOrderS.updateBuyerInfo(order);
-		return "myPage/groupPurchase/order/modify";
+		model.addAttribute("orderId", order.getOrderId());
+		return "redirect:/myPage/groupPurchase/order/detailOrderInfo";
 	}
 	
 	@RequestMapping("myPage/groupPurchase/order/deliveryInfoModifyForm")
 	public String ModifyOrderDeliveryInfo(
-			@RequestParam("order") Order order) throws Exception{
+			@RequestParam("order") Order order,
+			Model model) throws Exception{
 		
 		this.groupPurchaseOrderS.updateDeliveryInfo(order);
-		return "myPage/groupPurchase/order/modify";
+		model.addAttribute("orderId", order.getOrderId());
+		return "redirect:/myPage/groupPurchase/order/detailOrderInfo";
 	}
 }

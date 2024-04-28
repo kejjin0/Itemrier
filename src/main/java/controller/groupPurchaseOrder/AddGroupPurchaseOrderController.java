@@ -2,6 +2,7 @@ package controller.groupPurchaseOrder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,12 +19,23 @@ public class AddGroupPurchaseOrderController {
 		this.gpOrderS = gpOrderS;
 	}
 	
+	@RequestMapping("/groupPurchase/orderForm")
+	public String readyForWrite(
+			@RequestParam("itemId") int itemId) throws Exception{
+		// groupPurchase service
+		// service로부터 groupPurchase 물품 찾기
+		// groupPurchase 물품 저장
+		return "groupPurchaseOrderForm";
+	}
+	
 	@RequestMapping("/groupPurchase/order")
 	public String addGroupPurchaseOrder(
-			@RequestParam("order") Order order) throws Exception{
+			@RequestParam("order") Order order,
+			Model model) throws Exception{
 		
 		this.gpOrderS.insertGroupPurchaseOrder(order);
-		return "groupPruchase/conformOrderInfo";
+		model.addAttribute("orderId", order.getOrderId());
+		return "redirect:/groupPruchase/conformOrderInfo";
 	}
 	
 	@RequestMapping("/groupPurchase/conformOrderInfo")

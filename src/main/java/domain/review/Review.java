@@ -26,8 +26,6 @@ public class Review {
 		this.promise = promise;
 	}
 
-
-
 	public int getReivewId() {
 		return reivewId;
 	}

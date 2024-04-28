@@ -3,10 +3,14 @@ package controller.auctionOrder;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import domain.order.Order;
 import service.auctionOrder.AuctionOrderService;
@@ -21,21 +25,39 @@ private AuctionOrderService auctionOrderS;
 	}
 	
 	@RequestMapping("myPage/auction/buyerInfo")
-	public ModelAndView viewAuctionBuyersInfo(
-			@RequestParam("itemId") int itemId) throws Exception{
-		
-		List<Order> buyers = this.auctionOrderS.getAuctionOrderBuyersInfo(itemId);
-		ModelAndView mav = new ModelAndView("auctionBuyersInfo");
-		mav.addObject("buyers", buyers);
-		return mav;
+	public String viewAuctionBuyersInfo(
+			@RequestParam("itemId") int itemId,
+			ModelMap model) throws Exception{
+		List<Order> list = this.auctionOrderS.getAuctionOrderBuyersInfo(itemId);
+		PagedListHolder<Order> buyers = new PagedListHolder<Order>(list);
+		buyers.setPageSize(15);
+		model.put("buyers", buyers);
+		model.put("count", list.size());
+		return "auctionBuyersInfo";
 	}
+	
+	@RequestMapping("myPage/auction/buyerInfo2")
+	public String viewAuctionBuyersInfo2(
+			@RequestParam("page") String page,
+			@ModelAttribute("buyers") PagedListHolder<Order> buyers,
+			BindingResult result) throws Exception{
+		if (buyers == null) {
+			throw new IllegalStateException("Cannot find pre-loaded items");
+		}
+		if("next".equals(page)) { buyers.nextPage(); }
+		else if ("previous".equals(page)) { buyers.previousPage(); }
+		return "auctionBuyersInfo";
+	}
+	
 	
 	@RequestMapping("myPage/auction/updateInvoiceNumber")
 	public String udpateAuctionInvoiceNumber(
-			@RequestParam("order") Order order) throws Exception{
+			@RequestParam("order") Order order,
+			Model model) throws Exception{
 		
 		this.auctionOrderS.updateInvoiceNumberInfo(order);
-		return "myPage/auction/buyersInfo";
+		model.addAttribute("itemId", order.getOrderId());
+		return "redirct:/myPage/auction/buyerInfo";
 	}
 	
 }

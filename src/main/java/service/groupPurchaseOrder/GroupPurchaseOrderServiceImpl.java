@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dao.groupPurchaseOrder.GroupPurchaseOrderDao;
+import domain.groupPurchase.GroupPurchase;
 import domain.order.Order;
 
 @Service("GroupPurchaseOrderServiceImpl")
@@ -19,7 +20,7 @@ public class GroupPurchaseOrderServiceImpl implements GroupPurchaseOrderService{
 	}
 
 	// (구매) 구매 내역 학인
-	public List<Order> getBuyGroupPurchase(int buyerId){
+	public List<GroupPurchase> getBuyGroupPurchase(int buyerId){
 		return gpoDao.getBuyGroupPurchase(buyerId);
 	}
 	// (구매자) 특정 상품 구매 내역 확인

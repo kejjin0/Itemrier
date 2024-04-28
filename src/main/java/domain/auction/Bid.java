@@ -6,7 +6,7 @@ public class Bid {
     private int amount; // 입찰 금액
     private Timestamp bidTime; // 입찰 시간
     private int itemId; // 입찰 상품
-    private int userId; // 입찰한 유저 아이디
+    private int userId; // 입찰한 유저아이디
     
     public Bid() {}
     

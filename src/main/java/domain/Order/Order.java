@@ -1,4 +1,4 @@
-package domain.Order;
+package domain.order;
 
 import java.util.Date;
 

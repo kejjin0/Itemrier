@@ -32,5 +32,8 @@ public interface GroupPurchaseDao {
 	
 	// (판매) 판매 완료인 내역 확인
 	List<GroupPurchase> getGroupPurchaseEnded(int sellerId) throws DataAccessException;
-    
+
+	//검색을 위함
+    // 공동구매 상품 검색
+    List<GroupPurchase> searchGroupPurchases(String searchWord);
 }

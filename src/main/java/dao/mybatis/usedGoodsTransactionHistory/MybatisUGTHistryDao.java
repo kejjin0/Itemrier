@@ -19,16 +19,6 @@ public class MybatisUGTHistryDao implements UGTHistryMapper {
 		ugtHistoryMapper.insertUsedGoodsTransactionHistory(h);
 	}
 	
-	// 구매자 리뷰 여부 수정
-	public void updateBuyerReviewYorN(int itemId, int buyerId) throws DataAccessException {
-		ugtHistoryMapper.updateBuyerReviewYorN(itemId, buyerId);
-	}
-	
-	// 판매자 리뷰 여부 수정
-	public void updateSellerReviewYorN(int itemId, int sellerId) throws DataAccessException {
-		ugtHistoryMapper.updateSellerReviewYorN(itemId, sellerId);
-	}
-	
 	// (구매) 사용자의 거래 내역 가져오기
 	public List<UsedGoodsTransactionHistory> getUsedGoodsBuyerHistory(int buyerId) throws DataAccessException{
 		return ugtHistoryMapper.getUsedGoodsBuyerHistory(buyerId);

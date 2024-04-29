@@ -18,5 +18,5 @@ public interface UsedGoodsTransactionHistoryDao {
 	void updateSellerReviewYorN(int itemId, int sellerId) throws DataAccessException;
 	
 	// (구매) 사용자의 거래 내역 가져오기
-	List<UsedGoodsTransactionHistory> getUsedGoodsBuyerHistory(int itemId, int buyerId) throws DataAccessException;
+	List<UsedGoodsTransactionHistory> getUsedGoodsBuyerHistory(int buyerId) throws DataAccessException;
 }

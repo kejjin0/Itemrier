@@ -17,7 +17,7 @@ import org.springframework.web.util.WebUtils;
 import service.user.UserFormValidator;
 
 @Controller
-@RequestMapping({"/user/userForm"})
+@RequestMapping({"/user/registerForm"})
 public class UserFormController { 
 
     @Value("EditUserForm")

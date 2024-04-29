@@ -29,4 +29,7 @@ public interface UsedGoodsDao {
 	
 	// (판매) 거래 완료된 내역 가져오기
 	List<UsedGoods> getUsedGoodsEnded(int sellerId) throws DataAccessException;
+	//검색을 위함
+    // 중고거래 상품 검색
+    List<UsedGoods> searchUsedGoods(String searchWord);
 }

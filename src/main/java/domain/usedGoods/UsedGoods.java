@@ -13,11 +13,12 @@ public class UsedGoods {
     private Date registerDate; // 등록날짜
     private int sellerId; // 글 등록자 아이디
 	private int buyerId; // 구매자 아이디
+    private int catId; // 카테고리 아이디
 	
 	public UsedGoods() {}
 
 	public UsedGoods(int itemId, String itemName, String desc, String condition, int price, String contactType,
-			String status, Date registerDate, int sellerId, int buyerId) {
+			String status, Date registerDate, int sellerId, int buyerId, int catId) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
@@ -29,6 +30,7 @@ public class UsedGoods {
 		this.registerDate = registerDate;
 		this.sellerId = sellerId;
 		this.buyerId = buyerId;
+        this.catId = catId;
 	}
 
 	public int getItemId() {
@@ -110,4 +112,11 @@ public class UsedGoods {
 	public void setBuyerId(int buyerId) {
 		this.buyerId = buyerId;
 	}
+    public int getCatId() {
+        return catId;
+    }
+
+    public void setCatId(int catId) {
+        this.catId = catId;
+    }
 }

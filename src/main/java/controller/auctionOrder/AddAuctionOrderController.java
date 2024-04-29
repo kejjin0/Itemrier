@@ -34,7 +34,7 @@ public class AddAuctionOrderController {
 		
 		this.auctionOrderS.insertAuctionOrder(order);
 		model.addAttribute("orderId", order.getOrderId());
-		return "redirect:/auction/conformOrderInfo";
+		return "redirect:/auction/confirmOrderInfo";
 	}
 	
 	@RequestMapping("/auction/conformOrderInfo")

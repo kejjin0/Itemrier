@@ -21,7 +21,7 @@ public class ViewUGTHistoryController {
 		this.ugtHistoryS = ugtHistoryS;
 	}
 	
-	@RequestMapping("/myPage/usedGoodsTransaction")
+	@RequestMapping("myPage/usedGoodsTransactionHistory")
 	public String viewUGTHistory(
 			@RequestParam("buyerId") int buyerId,
 			ModelMap model) throws Exception{
@@ -32,7 +32,7 @@ public class ViewUGTHistoryController {
 		return "purchasedUsedGoods";
 	}
 	
-	@RequestMapping("/myPage/usedGoodsTransaction")
+	@RequestMapping("myPage/usedGoodsTransactionHistory")
 	public String viewAucitonEnded2(
 			@RequestParam("page") String page,
 			@ModelAttribute("items") PagedListHolder<UsedGoodsTransactionHistory> items,

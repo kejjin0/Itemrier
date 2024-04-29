@@ -27,6 +27,6 @@ private GroupPurchaseOrderService gpOrderS;
 		
 		Order order = this.gpOrderS.getCancelInfo(orderId);
 		model.addAttribute("order", order);
-		return "grupPurchaseOrderCancelInfo";
+		return "orderCancelInfo";
 	}
 }

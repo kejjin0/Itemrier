@@ -3,12 +3,12 @@ package controller.auctionOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import domain.auction.Auction;
 import domain.order.Order;
@@ -47,12 +47,12 @@ private AuctionOrderService auctionOrderS;
 	}
 	
 	@RequestMapping("/myPage/auction/detailOrderInfo")
-	public ModelAndView viewAuctionOrderDetail(
-			@RequestParam("orderId") int orderId) throws Exception{
+	public String viewAuctionOrderDetail(
+			@RequestParam("orderId") int orderId,
+			Model model) throws Exception{
 		
 		Order order = this.auctionOrderS.getAuctionOrderDetailInfo(orderId);
-		ModelAndView mav = new ModelAndView("auctionOrderDetail");
-		mav.addObject("order", order);
-		return mav;
+		model.addAttribute("order", order);
+		return "auctionOrderDetail";
 	}
 }

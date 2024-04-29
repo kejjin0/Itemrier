@@ -6,28 +6,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import domain.usedGoods.UsedGoods;
 import domain.usedGoodsTransactionHistory.UsedGoodsTransactionHistory;
+import service.usedGoods.UsedGoodsService;
 import service.usedGoodsTransactionHistory.UGTHistoryService;
 
 @Controller
 public class AddUGTHistoryController {
 	private UGTHistoryService ugtHistoryS;
+	private UsedGoodsService usedGoodsS;
 	
 	@Autowired
 	public void setUGTHistoryService(UGTHistoryService ugtHistoryS) {
 		this.ugtHistoryS = ugtHistoryS;
 	}
 	
-	@RequestMapping("/usedGoods/transactionForm")
-	public String readyForWrite(
-			@RequestParam("itemId") int itemId) throws Exception{
-		// usedGoods service
-		// service로부터 usedGoods 물품 찾기
-		// usedGoods 물품 저장
-		return "UsedGoodsTransactionForm";
+	@Autowired
+	public void setUsedGoodsService(UsedGoodsService usedGoodsS) {
+		this.usedGoodsS = usedGoodsS;
 	}
 	
-	@RequestMapping("/usedGoods/addUGTHistory")
+	@RequestMapping("myPage/usedGoods/transactionForm")
+	public String readyForWrite(
+			@RequestParam("itemId") int itemId,
+			Model model) throws Exception{
+		UsedGoods item = usedGoodsS.getUsedGoodById(itemId);
+		model.addAttribute("item", item);
+		return "usedGoodsTransactionForm";
+	}
+	
+	@RequestMapping("myPage/usedGoods/addUGTHistory")
 	public String addUGTHistory(
 			@RequestParam("ugtHistory") UsedGoodsTransactionHistory ugtHistory,
 			Model model) throws Exception{

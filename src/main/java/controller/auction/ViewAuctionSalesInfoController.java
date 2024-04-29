@@ -30,7 +30,7 @@ public class ViewAuctionSalesInfoController {
 		
 		List<Auction> items = this.auctionS.getAuctionInProgress(sellerId);
 		model.put("items", items);
-		return "AuctionInProgress";
+		return "auctionInProgress";
 	}
 	
 	@RequestMapping("/myPage/auction/ended")
@@ -40,7 +40,7 @@ public class ViewAuctionSalesInfoController {
 		PagedListHolder<Auction> items = new PagedListHolder<Auction>(this.auctionS.getAuctionEnded(sellerId));
 		items.setPageSize(15);
 		model.put("items", items);
-		return "AuctionEnded";
+		return "auctionEnded";
 	}
 	
 	@RequestMapping("/myPage/auction/ended2")
@@ -53,7 +53,7 @@ public class ViewAuctionSalesInfoController {
 		}
 		if("next".equals(page)) { items.nextPage(); }
 		else if ("previous".equals(page)) { items.previousPage(); }
-		return "AuctionEnded";
+		return "auctionEnded";
 	}
 	
 }

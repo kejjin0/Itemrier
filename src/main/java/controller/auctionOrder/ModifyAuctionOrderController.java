@@ -25,7 +25,7 @@ private AuctionOrderService auctionOrderS;
 		
 		this.auctionOrderS.updateBuyerInfo(order);
 		model.addAttribute("orderId", order.getOrderId());
-		return "redirect://myPage/auction/detailOrderInfo";
+		return "redirect:/myPage/auction/detailOrderInfo";
 	}
 	
 	@RequestMapping("myPage/auction/order/deliveryInfoModifyForm")
@@ -35,7 +35,7 @@ private AuctionOrderService auctionOrderS;
 		
 		this.auctionOrderS.updateDeliveryInfo(order);
 		model.addAttribute("orderId", order.getOrderId());
-		return "redirect://myPage/auction/detailOrderInfo";
+		return "redirect:/myPage/auction/detailOrderInfo";
 	}
 	
 	

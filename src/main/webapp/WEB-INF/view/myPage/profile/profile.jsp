@@ -16,11 +16,11 @@ h2 {
 }
 
 .formContainer {
+	width: 1000px;
 	display: flex;
   	flex-direction: column;
   	align-items: center;
   	justify-content: center;
-  	margin-top: 80px;
 }
 
 input {
@@ -57,8 +57,8 @@ input {
 <body>
 	<div class="profileFormContainer">
 	<jsp:include page="../myPage.jsp" />
-		<h2>프로필 수정</h2>
 		<div class="formContainer">	
+		<h2>프로필 수정</h2>
 			<form>
 				아이디<br />
 				<input type="text" name="userId" />

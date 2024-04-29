@@ -1,15 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>회원가입</title>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
 </head>
 <style>
-.joinFormContainer {
-  	width: max;
+.profileFormContainer {
+  	display: flex;
 }
 
 h2 {
@@ -56,38 +55,39 @@ input {
 }
 </style>
 <body>
-	<div class="joinFormContainer">
-		<h2>회원가입</h2>
+	<div class="profileFormContainer">
+	<jsp:include page="../myPage.jsp" />
+		<h2>������ ����</h2>
 		<div class="formContainer">	
 			<form>
-				아이디<br />
+				���̵�<br />
 				<input type="text" name="userId" />
 				<br />
-				비밀번호<br />
+				��й�ȣ<br />
 				<input type="text" name="password" />
 				<br />
-				비밀번호 확인<br />
+				��й�ȣ Ȯ��<br />
 				<input type="text" name="pwdcheck" />
 				<p />
-				이름<br />
+				�̸�<br />
 				<input type="text" name="name" />
 				<br />
-				핸드폰 번호<br />
+				�ڵ��� ��ȣ<br />
 				<input type="text" name="phoneNum" />
 				<br />		
-				닉네임<br />
+				�г���<br />
 				<input type="text" name="nickName" />
 				<br />
-				주소<br />
+				�ּ�<br />
 				<input class="zipCode" type="text" name="zipCode" />
-				<Button class="zipCodeBtn" type="button"> 우편번호검색 </Button>
+				<Button class="zipCodeBtn" type="button"> ������ȣ�˻� </Button>
 				<br />
 				<input type="text" name="streetAdd" />
 				<br />
 				<input type="text" name="streetDetail" />
 				<br />
 			
-				<Button class="signBtn" type="button">가입하기</Button>
+				<Button class="signBtn" type="button">�����ϱ�</Button>
 			</form>
 		</div>	
 	</div>

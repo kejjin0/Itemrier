@@ -24,7 +24,7 @@ public class MypageController {
     }
     
     // user 수정
-    @RequestMapping("/myPage/editUser")
+    @RequestMapping("/myPage/changeForm")
     public String editUser(
             @RequestParam("user") User user,
             @RequestParam("userId") Long userId
@@ -34,7 +34,7 @@ public class MypageController {
     }
     
     // user 삭제
-    @RequestMapping("/myPage/removeUser")
+    @RequestMapping("/myPage/deleteUser")
     public String deleteUSer(
             @RequestParam("userId") Long userId
         ) throws Exception {

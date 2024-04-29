@@ -52,6 +52,8 @@
 	            <td colspan="2" class="btnSize">
 	                <input type="submit" value="결제하기">
 	                <input type="submit" value="장바구니">
+                    <!-- 상품 찜 추가 -->
+	                <input type="submit" value="찜">
 	            </td>
 	        </tr>
 	    </table>
@@ -63,5 +65,13 @@
 	<div>
 	    상품 정보 내용
 	</div>
+	
+    <!-- 관련 상품 추천 -->
+    <div class="rec">
+        <p>비슷한 상품 추천</p>
+        <img src="../img/product.jpg" alt="상품1" style="width: 300px; height: auto; padding: 20px 30px;">
+        <img src="../img/product.jpg" alt="상품2" style="width: 300px; height: auto; padding: 20px 50px;">
+        <img src="../img/product.jpg" alt="상품3" style="width: 300px; height: auto; padding: 20px 50px;">
+    </div>
 </body>
 </html>
